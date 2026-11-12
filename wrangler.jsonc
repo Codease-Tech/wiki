@@ -18,8 +18,7 @@
     {
       "binding": "DB",
       "database_name": "codease-dokumantasyon",
-      // `npx wrangler d1 create codease-dokumantasyon` çıktısındaki kimlik buraya yazılır.
-      "database_id": "00000000-0000-0000-0000-000000000000",
+      "database_id": "f318ba4a-7c48-4444-9454-f2301c467219",
       "migrations_dir": "migrations"
     }
   ],
@@ -27,6 +26,6 @@
     // Google Cloud'da açılan OAuth istemci kimliği (gizli değildir).
     "GOOGLE_ISTEMCI_KIMLIGI": "1000553354536-hq4ogeqfgrnsj0l1a547ilghfk2gj78u.apps.googleusercontent.com",
     // Tüm notları görebilecek e-postalar, virgülle ayrılır.
-    "YONETICI_EPOSTALARI": ""
+    "YONETICI_EPOSTALARI": "asim.yilmaz@codease.io"
   }
 }
