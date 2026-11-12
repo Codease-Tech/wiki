@@ -1,0 +1,32 @@
+{
+  // Yayın adımları: YAYIN.md
+  "name": "codease-dokumantasyon",
+  "main": "worker/index.ts",
+  "compatibility_date": "2026-11-01",
+  // Sitenin adresi. codease.io alan adı, yayın yapılan Cloudflare hesabında olmalıdır.
+  "routes": [{ "pattern": "wiki.codease.io", "custom_domain": true }],
+  "assets": {
+    // VitePress çıktısı; önce `npm run build`.
+    "directory": "./docs/.vitepress/dist",
+    "binding": "ASSETS",
+    // Worker yalnızca /api/* için çalışır; geri kalanı doğrudan dosyadan sunulur.
+    "run_worker_first": ["/api/*"],
+    "html_handling": "auto-trailing-slash",
+    "not_found_handling": "404-page"
+  },
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "codease-dokumantasyon",
+      // `npx wrangler d1 create codease-dokumantasyon` çıktısındaki kimlik buraya yazılır.
+      "database_id": "00000000-0000-0000-0000-000000000000",
+      "migrations_dir": "migrations"
+    }
+  ],
+  "vars": {
+    // Google Cloud'da açılan OAuth istemci kimliği (gizli değildir).
+    "GOOGLE_ISTEMCI_KIMLIGI": "1000553354536-hq4ogeqfgrnsj0l1a547ilghfk2gj78u.apps.googleusercontent.com",
+    // Tüm notları görebilecek e-postalar, virgülle ayrılır.
+    "YONETICI_EPOSTALARI": ""
+  }
+}

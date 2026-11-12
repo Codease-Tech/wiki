@@ -1,0 +1,26 @@
+{
+  "name": "codease-dokumantasyon",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "concurrently -k -n site,api -c blue,green \"vitepress dev docs\" \"wrangler dev --port 8787\"",
+    "dev:site": "vitepress dev docs",
+    "build": "vitepress build docs",
+    "preview": "npm run build && wrangler dev --port 8787",
+    "test": "vitest run",
+    "db:yerel": "wrangler d1 migrations apply codease-dokumantasyon --local",
+    "deploy": "vitepress build docs && wrangler deploy"
+  },
+  "devDependencies": {
+    "@cloudflare/vitest-plugin": "^1.8.1",
+    "@cloudflare/workers-types": "^5.20261112.1",
+    "concurrently": "^10.0.7",
+    "typescript": "^7.0.2",
+    "vitepress": "^1.6.4",
+    "vitest": "^4.1.12",
+    "wrangler": "^4.161.0"
+  },
+  "dependencies": {
+    "jose": "^6.2.17"
+  }
+}

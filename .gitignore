@@ -1,0 +1,17 @@
+node_modules
+.DS_Store
+
+# Gizli değerler ve yerel durum
+.dev.vars
+.wrangler
+
+# Derleme çıktıları
+docs/.vitepress/dist
+docs/.vitepress/cache
+
+# Kaynak videolar ve onlardan çıkan dökümler, kareler, modeller dış servise gönderilmez (CLAUDE.md → Kurallar).
+# calisma/ altından yalnızca araç betikleri, planlar ve çalışma notları depoya girer.
+videolar/
+calisma/*/
+!calisma/planlar/
+!calisma/kod-taramasi/
